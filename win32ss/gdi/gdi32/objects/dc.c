@@ -66,7 +66,7 @@ IntCreateDICW(
                        Display,
                        hspool,
                        (PVOID) &UMdhpdev );
-#if 0
+#if 1
 // Handle something other than a normal dc object.
     if (GDI_HANDLE_GET_TYPE(hdc) != GDI_OBJECT_TYPE_DC)
     {
