@@ -13,7 +13,6 @@ list(APPEND SOURCE
 
 add_library(ftfd SHARED
     ${SOURCE}
-    sprintf.c
     freetype.rc
     ${CMAKE_CURRENT_BINARY_DIR}/ftfd.def)
 
