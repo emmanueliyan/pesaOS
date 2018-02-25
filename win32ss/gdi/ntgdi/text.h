@@ -1,16 +1,20 @@
 #pragma once
 
 /* GDI logical font object */
-typedef struct _LFONT TEXTOBJ, *PTEXTOBJ;
-
 typedef struct _LFONT LFONT, *PLFONT;
 
 /*  Internal interface  */
 
-#define  TEXTOBJ_UnlockText(pBMObj) GDIOBJ_vUnlockObject ((POBJ)pBMObj)
 NTSTATUS FASTCALL TextIntCreateFontIndirect(CONST LPLOGFONTW lf, HFONT *NewFont);
 BOOL FASTCALL InitFontSupport(VOID);
-ULONG FASTCALL FontGetObject(PTEXTOBJ TextObj, ULONG Count, PVOID Buffer);
+#define FontGetObject LFONT_GetObject
+
+ULONG
+FASTCALL
+LFONT_GetObject(
+    PLFONT plfont,
+    ULONG Count,
+    PVOID Buffer);
 
 HFONT
 NTAPI
