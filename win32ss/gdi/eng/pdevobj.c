@@ -152,7 +152,7 @@ PDEVOBJ_bEnablePDEV(
                                   ppdev->pGraphicsDevice->DeviceObject);
     if (ppdev->dhpdev == NULL)
     {
-        DPRINT1("Failed to enable PDEV\n");
+        ERR("Failed to enable PDEV\n");
         return FALSE;
     }
 
@@ -310,7 +310,7 @@ PDEVOBJ_pSurface(
         hsurf = ppdev->pldev->pfn.EnableSurface(ppdev->dhpdev);
         if (hsurf== NULL)
         {
-            DPRINT1("Failed to create PDEV surface!\n");
+            ERR("Failed to create PDEV surface!\n");
             return NULL;
         }
 
@@ -358,7 +358,7 @@ PDEVOBJ_vRefreshModeList(
     /* Now re-populate the list */
     if (!EngpPopulateDeviceModeList(pGraphicsDevice, &dmDefault))
     {
-        DPRINT1("FIXME: EngpPopulateDeviceModeList failed, we just destroyed a perfectly good mode list\n");
+        ERR("FIXME: EngpPopulateDeviceModeList failed, we just destroyed a perfectly good mode list\n");
     }
 
     ppdev->pdmwDev = pGraphicsDevice->pDevModeList[pGraphicsDevice->iCurrentMode].pdm;
