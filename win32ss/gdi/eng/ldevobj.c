@@ -461,10 +461,7 @@ EngLoadImageEx(
             {
                 ERR("LDEVOBJ_bEnableDriver failed\n");
 
-                /* Unload the image. */
-                LDEVOBJ_vUnloadImage(pldev);
-
-                /* Unload the image. */
+                /* Unload the image and free the LDEVOBJ. */
                 LDEVOBJ_vUnloadImage(pldev);
                 LDEVOBJ_vFreeLDEV(pldev);
                 pldev = NULL;
