@@ -120,6 +120,7 @@ WINAPI
 PathToRegion(
     HDC	hdc)
 {
+    HANDLE_METADC0P(HRGN, PathToRegion, NULL, hdc);
     return NtGdiPathToRegion(hdc);
 }
 
