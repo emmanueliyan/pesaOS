@@ -28,15 +28,6 @@ KdpReportCommandStringStateChange(IN PSTRING NameString,
 {
 }
 
-VOID
-NTAPI
-KdpReportLoadSymbolsStateChange(IN PSTRING PathName,
-                                IN PKD_SYMBOLS_INFO SymbolInfo,
-                                IN BOOLEAN Unload,
-                                IN OUT PCONTEXT Context)
-{
-}
-
 BOOLEAN
 NTAPI
 KdpReportExceptionStateChange(IN PEXCEPTION_RECORD ExceptionRecord,
